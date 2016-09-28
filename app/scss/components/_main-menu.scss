@@ -1,0 +1,195 @@
+.main-menu-wrapper {
+  width: 89.53125%; // 1146px : 1280px;
+  overflow-x: auto;
+}
+
+.main-menu {
+  position: relative;
+  height: 100%;
+  font-size: 0;
+  overflow: hidden;
+  overflow-x: inherit;
+  white-space: nowrap;
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    width: 16.66666666666667%; // 191px : 1280px;
+    min-width: 191px;
+    height: 100%;
+    padding-top: 86px;
+    text-decoration: none;
+    text-align: center;
+    background: linear-gradient(to right, $pallete-menu-links-gradient-from, $pallete-menu-links-gradient-to 30%);
+    color: $pallete-menu-links;
+    @include convertToRem(15, 15);
+    font-weight: 600;
+    transform: translateY(100%);
+    transition: color 0.3s ease-in, background-color 0.3s ease-in;
+    animation-name: slideUp;
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 1%;
+      height: 10px;
+      background-color: transparent;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: $pallete-menu-links-hover;
+      background: url('../img/delivery.jpg') no-repeat;
+      background-size: cover;
+
+      .icon-wrapper {
+        background-color: transparent;
+
+        &:before {
+          animation-name: round;
+          animation-duration: 1s;
+          animation-delay: 0.3s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+        }
+      }
+
+      &:before {
+        width: 100%;
+        background-color: $pallete-primary;
+      }
+    }
+
+    &:first-child {
+      animation-delay: 0.1s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    &:last-child {
+      animation-delay: 0.6s;
+    }
+
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .icon-wrapper {
+    position: relative;
+    @include flexible($ai: center);
+    width: 93px;
+    height: 93px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    border: 1px solid $pallete-icon-border;
+    border-radius: 50%;
+    background-color: $pallete-background-icon;
+    transition: background-color 0.3s ease-in;
+
+    &:before {
+      content: '';
+      position: absolute;
+      visibility: hidden;
+      top: 50%;
+      left: 50%;
+      width: 7px;
+      height: 7px;
+      margin-left: -3.5px;
+      margin-top: -3.5px;
+      background-color: $pallete-primary;
+      border-radius: 50%;
+    }
+
+    @keyframes round {
+      0% {
+        visibility: visible;
+        transform: rotate(0deg) translateX(46px) rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg) translateX(46px) rotate(-360deg);
+      }
+    }
+  }
+
+  .icon {
+    display: block;
+    margin: 0 auto;
+    background-image: url('../img/sprites.png');
+    background-repeat: no-repeat;
+    background-size: 200px 125px;
+
+    &--about {
+      width: 29px;
+      height: 39px;
+      background-position: -162px -57px;
+    }
+
+    &--production {
+      width: 32px;
+      height: 48px;
+      background-position: -58px 0;
+    }
+
+    &--quality {
+      width: 20px;
+      height: 42px;
+      background-position: -15px -5px;
+    }
+
+    &--delivery {
+      width: 61px;
+      height: 37px;
+      background-position: -84px -57px;
+    }
+
+    &--ecology {
+      width: 40px;
+      height: 38px;
+      background-position: -105px -6px;
+    }
+
+    &--contacts {
+      width: 31px;
+      height: 41px;
+      background-position: -162px -4px;
+    }
+  }
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+  .main-menu {
+    .icon {
+      background-image: url('../img/sprites-retina.png');
+    }
+  }
+}

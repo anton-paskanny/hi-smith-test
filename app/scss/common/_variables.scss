@@ -1,0 +1,27 @@
+// fonts
+$base-font-family: 'Open Sans', sans-serif;
+
+// font's sizes
+$font-size-base: 1rem;
+$line-height-base: 1rem;
+
+// colors
+$x-pallete-green: #5e6738;
+$x-pallete-gray: #adadad;
+$x-pallete-orange: #fab000;
+$x-pallete-white: #fff;
+$x-pallete-light-gray: #e8e9eb;
+$x-pallete-gray: rgba(70, 79, 94, 0.46);
+
+$pallete-primary: $x-pallete-orange;
+$pallete-text: $x-pallete-gray;
+$pallete-menu-links: $x-pallete-green;
+$pallete-menu-links-hover: $x-pallete-white;
+$pallete-background-sidebar: $x-pallete-white;
+$pallete-background-icon: $x-pallete-white;
+$pallete-icon-border: $x-pallete-white;
+$pallete-menu-links-gradient-from: $x-pallete-gray;
+$pallete-menu-links-gradient-to: $x-pallete-light-gray;
+
+// breakpoints
+$point-small: 425px;

@@ -1,0 +1,11 @@
+@mixin flexible($fd: row, $ai: stretch, $jc: space-between, $fw: wrap) {
+	display: flex;
+	flex-flow: $fd $fw;
+	align-items: $ai;
+	justify-content: $jc;
+}
+
+@mixin convertToRem($fs, $lh) {
+	font-size: ($fs / 16) + rem;
+	line-height: ($lh / 16) + rem;
+}

@@ -1,0 +1,29 @@
+@import "./common/variables";
+@import "./common/mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $base-font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $pallete-text;
+  font-weight: normal;
+}
+
+.global-wrapper {
+  @include flexible($fw: nowrap);
+  min-width: 320px;
+  height: 98vh;
+  box-shadow: 0 0 40px rgba(70, 79, 94, 0.66);
+  overflow-x: hidden;
+}
+
+@import "./components/sidebar";
+@import "./components/main-menu";
