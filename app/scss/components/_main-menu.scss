@@ -1,11 +1,12 @@
 .main-menu-wrapper {
   width: 89.53125%; // 1146px : 1280px;
+  height: 100%;
   overflow-x: auto;
 }
 
 .main-menu {
   position: relative;
-  height: 100%;
+  height: inherit;
   font-size: 0;
   overflow: hidden;
   overflow-x: inherit;
